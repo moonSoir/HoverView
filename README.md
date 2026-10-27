@@ -17,6 +17,6 @@
 
 **[QtTabBar](https://github.com/indiff/qttabbar)** - идейный вдохновитель
 
-**[kyosora](https://github.com/kyosora)** - основа для логики определения файла на который наведён курсор
+**[kyosora](https://github.com/kyosora)** - основа для логики определения файла на который наведён курсор взята из **[HoverPeek](https://github.com/kyosora/HoverPeek)**
 
 **[AnimatedImage.Wpf](https://github.com/whistyun/AnimatedImage)** - библиотека для отображения анимированных изображений.
