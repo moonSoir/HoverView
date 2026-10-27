@@ -1,0 +1,74 @@
+# ----------------------
+# Build results
+# ----------------------
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+# ----------------------
+# Visual Studio / VS Code
+# ----------------------
+.vs/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# ----------------------
+# .NET / NuGet
+# ----------------------
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.nuget.props
+*.nuget.targets
+
+# ----------------------
+# Rider / JetBrains
+# ----------------------
+.idea/
+*.sln.iml
+
+# ----------------------
+# OS files
+# ----------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ----------------------
+# Local user files (не коммитим локальные настройки)
+# ----------------------
+# settings.json хранится в %AppData%\HoverView, но на всякий случай
+settings.json
+*.local.json
+
+# ----------------------
+# Publish outputs
+# ----------------------
+publish/
+*.pdb
+*.exe
+*.dll
+*.cache
+
+# ----------------------
+# Logs
+# ----------------------
+*.log
