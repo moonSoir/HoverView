@@ -1,0 +1,56 @@
+<Window x:Class="HoverView.UI.HoverPreviewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:anim="https://github.com/whistyun/AnimatedImage.Wpf"
+        WindowStyle="None" AllowsTransparency="True" Background="#CC1E1E1E"
+        ShowActivated="False" Topmost="True" ResizeMode="NoResize"
+        Width="400" Height="300" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Контейнер для контента (картинка, видео, аудио, текст) -->
+        <Grid Grid.Row="0">
+            <!-- Изображения и GIF -->
+            <Image x:Name="PreviewImage" Stretch="Uniform" Visibility="Collapsed"
+                   RenderOptions.BitmapScalingMode="HighQuality"
+                   anim:ImageBehavior.AnimatedSource="{Binding ElementName=PreviewImage, Path=Tag}" />
+                   
+            <!-- Видео -->
+            <MediaElement x:Name="PreviewVideo" Stretch="Uniform" 
+                          LoadedBehavior="Manual" UnloadedBehavior="Stop"
+                          Visibility="Collapsed" />
+                          
+            <!-- Панель аудио -->
+            <Grid x:Name="AudioPanel" Visibility="Collapsed" Background="#FF2D2D30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="AudioFileName" Grid.Row="0" Foreground="White" 
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontSize="16" TextTrimming="CharacterEllipsis" Margin="10"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                    <Button x:Name="BtnAudioPlayPause" Content="▶" Width="40" Height="30" Margin="0,0,10,0"
+                            Click="BtnAudioPlayPause_Click"/>
+                    <TextBlock x:Name="AudioStatus" Foreground="LightGray" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Текст -->
+            <ScrollViewer x:Name="TextScroll" Visibility="Collapsed" VerticalScrollBarVisibility="Auto" 
+                          HorizontalScrollBarVisibility="Auto" Background="#FF1E1E1E" Padding="10">
+                <TextBlock x:Name="PreviewText" Foreground="#FFD4D4D4" FontFamily="Consolas" 
+                           FontSize="12" TextWrapping="Wrap"/>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- Панель с информацией о файле -->
+        <Border x:Name="InfoPanel" Grid.Row="1" Background="#AA000000" Padding="8,4">
+            <TextBlock x:Name="FileInfoText" Foreground="LightGray" FontSize="11" 
+                       TextTrimming="CharacterEllipsis" HorizontalAlignment="Center"/>
+        </Border>
+    </Grid>
+</Window>
