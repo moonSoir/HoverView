@@ -80,4 +80,10 @@
 - [QtTabBar](https://github.com/indiff/qttabbar) - идейный вдохновитель
 - [kyosora](https://github.com/kyosora) - основа для логики определения файла на который наведён курсор взята из [HoverPeek](https://github.com/kyosora/HoverPeek)
 
-```
+
+---
+TODO:
+  - English translation
+  - Archives preview support
+  - code syntaxis support
+  - markdown support
