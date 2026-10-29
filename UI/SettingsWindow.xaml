@@ -1,7 +1,8 @@
 <Window x:Class="HoverView.UI.SettingsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Настройки HoverView" Height="600" Width="520"
+        xmlns:loc="clr-namespace:HoverView"
+        Title="{x:Static loc:Localization.SettingsTitle}" Height="650" Width="520"
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         ShowInTaskbar="False" Topmost="True">
     <Grid Margin="15">
@@ -12,74 +13,88 @@
 
         <TabControl Grid.Row="0" Margin="0,0,0,15">
             
-            <!-- Вкладка 1: Внешний вид -->
-            <TabItem Header="Внешний вид">
+            <TabItem Header="{x:Static loc:Localization.TabAppearance}" x:Name="TabAppearance">
                 <StackPanel Margin="15">
-                    <TextBlock Text="Лимит размера окна предпросмотра" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <TextBlock Text="{x:Static loc:Localization.WindowSizeLimit}" FontWeight="Bold" Margin="0,0,0,10"/>
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                        <TextBlock Text="Ширина:" VerticalAlignment="Center" Width="70"/>
+                        <TextBlock Text="{x:Static loc:Localization.Width}" VerticalAlignment="Center" Width="70"/>
                         <TextBox x:Name="TxtWidth" Width="80" TextAlignment="Center"/>
                         <TextBlock Text="px" VerticalAlignment="Center" Margin="5,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
-                        <TextBlock Text="Высота:" VerticalAlignment="Center" Width="70"/>
+                        <TextBlock Text="{x:Static loc:Localization.Height}" VerticalAlignment="Center" Width="70"/>
                         <TextBox x:Name="TxtHeight" Width="80" TextAlignment="Center"/>
                         <TextBlock Text="px" VerticalAlignment="Center" Margin="5,0,0,0"/>
                     </StackPanel>
                     
-                    <TextBlock Text="Режим отображения:" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <TextBlock Text="{x:Static loc:Localization.DisplayMode}" FontWeight="Bold" Margin="0,0,0,10"/>
                     <CheckBox x:Name="ChkAutoSizeToContent" 
-                              Content="Подстраивать окно точно под размер файла (без рамок)" 
+                              Content="{x:Static loc:Localization.AutoSizeToContent}" 
                               Margin="0,0,0,10"/>
                     <CheckBox x:Name="ChkUseMinimalFrame" 
-                              Content="Вписывать в лимит с сохранением пропорций и минимальной рамкой" 
+                              Content="{x:Static loc:Localization.UseMinimalFrame}" 
                               Margin="0,0,0,20"/>
                     
-                    <TextBlock Text="Задержки появления/исчезновения" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <TextBlock Text="{x:Static loc:Localization.Delays}" FontWeight="Bold" Margin="0,0,0,10"/>
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                        <TextBlock Text="Наведение (мс):" VerticalAlignment="Center" Width="120"/>
+                        <TextBlock Text="{x:Static loc:Localization.HoverDelay}" VerticalAlignment="Center" Width="120"/>
                         <TextBox x:Name="TxtHoverDelay" Width="80" TextAlignment="Center"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Исчезновение (мс):" VerticalAlignment="Center" Width="120"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <TextBlock Text="{x:Static loc:Localization.HideDelay}" VerticalAlignment="Center" Width="120"/>
                         <TextBox x:Name="TxtHideDelay" Width="80" TextAlignment="Center"/>
                     </StackPanel>
+                    
+                    <TextBlock Text="{x:Static loc:Localization.ArchiveTree}" FontWeight="Bold" Margin="0,10,0,10"/>
+                    <CheckBox x:Name="ChkExpandArchiveTree" 
+                              Content="{x:Static loc:Localization.ExpandArchiveTree}" 
+                              Margin="0,0,0,0"/>
                 </StackPanel>
             </TabItem>
 
-            <!-- Вкладка 2: Форматы и размер -->
-            <TabItem Header="Форматы и размер">
+            <TabItem Header="{x:Static loc:Localization.TabFormats}" x:Name="TabFormats">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel Margin="15">
-                        <TextBlock Text="Поддерживаемые форматы (через запятую)" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <TextBlock Text="{x:Static loc:Localization.Formats}" FontWeight="Bold" Margin="0,0,0,10"/>
                         
-                        <TextBlock Text="Изображения:" Margin="0,0,0,5"/>
+                        <TextBlock Text="{x:Static loc:Localization.Images}" Margin="0,0,0,5"/>
                         <TextBox x:Name="TxtImageFormats" Margin="0,0,0,15"/>
                         
-                        <TextBlock Text="Видео:" Margin="0,0,0,5"/>
+                        <TextBlock Text="{x:Static loc:Localization.Videos}" Margin="0,0,0,5"/>
                         <TextBox x:Name="TxtVideoFormats" Margin="0,0,0,15"/>
 
-                        <TextBlock Text="Аудио:" Margin="0,0,0,5"/>
+                        <TextBlock Text="{x:Static loc:Localization.Audio}" Margin="0,0,0,5"/>
                         <TextBox x:Name="TxtAudioFormats" Margin="0,0,0,15"/>
 
-                        <TextBlock Text="Текст/Код:" Margin="0,0,0,5"/>
-                        <TextBox x:Name="TxtTextFormats" Margin="0,0,0,20"/>
+                        <TextBlock Text="{x:Static loc:Localization.Text}" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtTextFormats" Margin="0,0,0,15"/>
 
-                        <TextBlock Text="Максимальный размер файла (МБ, 0 = без ограничений)" FontWeight="Bold" Margin="0,0,0,10"/>
-                        <TextBox x:Name="TxtMaxSize" Width="100" HorizontalAlignment="Left" TextAlignment="Center" Margin="0,0,0,20"/>
+                        <TextBlock Text="{x:Static loc:Localization.Archives}" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtArchiveFormats" Margin="0,0,0,20"/>
 
-                        <TextBlock Text="Размер кэша изображений (шт.)" FontWeight="Bold" Margin="0,0,0,10"/>
-                        <TextBox x:Name="TxtMaxCacheSize" Width="100" HorizontalAlignment="Left" TextAlignment="Center"/>
+                        <TextBlock Text="{x:Static loc:Localization.MaxFileSize}" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <TextBox x:Name="TxtMaxSize" Width="100" HorizontalAlignment="Left" TextAlignment="Center" Margin="0,0,0,15"/>
+
+                        <TextBlock Text="{x:Static loc:Localization.MaxArchiveEntries}" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtMaxArchiveEntries" Width="100" HorizontalAlignment="Left" TextAlignment="Center" Margin="0,0,0,15"/>
+
+                        <TextBlock Text="{x:Static loc:Localization.MaxTextLines}" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtMaxTextLines" Width="100" HorizontalAlignment="Left" TextAlignment="Center" Margin="0,0,0,15"/>
+
+                        <TextBlock Text="{x:Static loc:Localization.CacheSizeCount}" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtMaxCacheSize" Width="100" HorizontalAlignment="Left" TextAlignment="Center" Margin="0,0,0,10"/>
+
+                        <TextBlock Text="{x:Static loc:Localization.CacheSizeMb}" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox x:Name="TxtMaxCacheSizeMb" Width="100" HorizontalAlignment="Left" TextAlignment="Center" Margin="0,0,0,10"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
 
-            <!-- Вкладка 3: Звук -->
-            <TabItem Header="Звук">
+            <TabItem Header="{x:Static loc:Localization.TabSound}" x:Name="TabSound">
                 <StackPanel Margin="15">
-                    <TextBlock Text="Настройки воспроизведения аудио" FontWeight="Bold" Margin="0,0,0,15"/>
+                    <TextBlock Text="{x:Static loc:Localization.AudioSettings}" FontWeight="Bold" Margin="0,0,0,15"/>
                     
-                    <TextBlock Text="Громкость аудиофайлов:" Margin="0,0,0,5"/>
+                    <TextBlock Text="{x:Static loc:Localization.Volume}" Margin="0,0,0,5"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -91,27 +106,46 @@
                         <TextBlock Grid.Column="1" x:Name="LblAudioVolume" Text="50%" 
                                    VerticalAlignment="Center" Width="50" TextAlignment="Right"/>
                     </Grid>
-                    <TextBlock Text="Видео всегда воспроизводится без звука." 
+                    <TextBlock Text="{x:Static loc:Localization.VideoNoSound}" 
                                Foreground="Gray" FontSize="11" Margin="0,10,0,0"/>
                 </StackPanel>
             </TabItem>
 
-            <!-- Вкладка 4: Система -->
-            <TabItem Header="Система">
+            <TabItem Header="{x:Static loc:Localization.TabSystem}" x:Name="TabSystem">
                 <StackPanel Margin="15">
-                    <TextBlock Text="Запуск приложения" FontWeight="Bold" Margin="0,0,0,10"/>
-                    <CheckBox x:Name="ChkAutoStart" Content="Запускать при старте Windows"/>
+                    <TextBlock Text="{x:Static loc:Localization.Startup}" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <CheckBox x:Name="ChkAutoStart" Content="{x:Static loc:Localization.AutoStart}" Margin="0,0,0,20"/>
+                    
+                    <TextBlock Text="{x:Static loc:Localization.FullScreenApps}" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <CheckBox x:Name="ChkPauseOnFullScreenApp" 
+                              Content="{x:Static loc:Localization.PauseOnFullScreen}" 
+                              Margin="0,0,0,5"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20" x:Name="FullScreenModePanel">
+                        <TextBlock Text="{x:Static loc:Localization.Mode}" VerticalAlignment="Center" Width="60"/>
+                        <ComboBox x:Name="CmbFullScreenMode" Width="220">
+                            <ComboBoxItem Content="{x:Static loc:Localization.OnlyExclusive}" Tag="0"/>
+                            <ComboBoxItem Content="{x:Static loc:Localization.AllFullScreen}" Tag="1"/>
+                        </ComboBox>
+                    </StackPanel>
+                    
+                    <TextBlock Text="{x:Static loc:Localization.Language}" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{x:Static loc:Localization.Language}" VerticalAlignment="Center" Width="60"/>
+                        <ComboBox x:Name="CmbLanguage" Width="150">
+                            <ComboBoxItem Content="Русский" Tag="ru"/>
+                            <ComboBoxItem Content="English" Tag="en"/>
+                        </ComboBox>
+                    </StackPanel>
                 </StackPanel>
             </TabItem>
 
-            <!-- Вкладка 5: О программе -->
-            <TabItem Header="О программе">
+            <TabItem Header="{x:Static loc:Localization.TabAbout}" x:Name="TabAbout">
                 <StackPanel Margin="15">
-                    <TextBlock Text="Информация о приложении" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <TextBlock Text="{x:Static loc:Localization.About}" FontWeight="Bold" Margin="0,0,0,10"/>
                     
                     <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                        <TextBlock Text="Версия: "/>
-                        <TextBlock x:Name="TxtVersion"/>
+                        <TextBlock Text="{x:Static loc:Localization.Version}" VerticalAlignment="Center" Width="100"/>
+                        <TextBlock x:Name="TxtVersion" VerticalAlignment="Center"/>
                     </StackPanel>
                     
                     <TextBlock x:Name="TxtAuthor" Margin="0,10,0,5"/>
@@ -122,11 +156,16 @@
 
         </TabControl>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Сохранить" Width="100" Height="30" Margin="0,0,10,0" 
-                    Click="BtnSave_Click" IsDefault="True"/>
-            <Button Content="Отмена" Width="100" Height="30" 
-                    Click="BtnCancel_Click" IsCancel="True"/>
-        </StackPanel>
+        <Grid Grid.Row="1" Margin="0,10,0,0">
+            <Button x:Name="BtnClose" Content="{x:Static loc:Localization.Close}" Width="100" Height="30" HorizontalAlignment="Left"
+                    Click="BtnClose_Click"/>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="BtnSave" Content="{x:Static loc:Localization.Save}" Width="100" Height="30" Margin="0,0,10,0" 
+                        Click="BtnSave_Click" IsDefault="True"/>
+                <Button x:Name="BtnCancel" Content="{x:Static loc:Localization.Cancel}" Width="100" Height="30" 
+                        Click="BtnCancel_Click" IsCancel="True"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
