@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="SettingsTitle" xml:space="preserve"><value>HoverView Settings</value></data>
+  <data name="TabAppearance" xml:space="preserve"><value>Appearance</value></data>
+  <data name="TabFormats" xml:space="preserve"><value>Formats &amp; Size</value></data>
+  <data name="TabSound" xml:space="preserve"><value>Sound</value></data>
+  <data name="TabSystem" xml:space="preserve"><value>System</value></data>
+  <data name="TabAbout" xml:space="preserve"><value>About</value></data>
+  <data name="Close" xml:space="preserve"><value>Close</value></data>
+  <data name="Save" xml:space="preserve"><value>Save</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Version" xml:space="preserve"><value>Version: </value></data>
+  <data name="Author" xml:space="preserve"><value>Author: {0}</value></data>
+  <data name="Language" xml:space="preserve"><value>Language:</value></data>
+  <data name="Saved" xml:space="preserve"><value>(Saved)</value></data>
+
+  <data name="WindowSizeLimit" xml:space="preserve"><value>Preview window size limit</value></data>
+  <data name="Width" xml:space="preserve"><value>Width:</value></data>
+  <data name="Height" xml:space="preserve"><value>Height:</value></data>
+  <data name="DisplayMode" xml:space="preserve"><value>Display mode:</value></data>
+  <data name="AutoSizeToContent" xml:space="preserve"><value>Fit window exactly to file size (no borders)</value></data>
+  <data name="UseMinimalFrame" xml:space="preserve"><value>Fit within limit preserving aspect ratio with minimal frame</value></data>
+  <data name="Delays" xml:space="preserve"><value>Show/Hide delays</value></data>
+  <data name="HoverDelay" xml:space="preserve"><value>Hover delay (ms):</value></data>
+  <data name="HideDelay" xml:space="preserve"><value>Hide delay (ms):</value></data>
+  <data name="ArchiveTree" xml:space="preserve"><value>Archive tree</value></data>
+  <data name="ExpandArchiveTree" xml:space="preserve"><value>Expand all folders in archive tree</value></data>
+
+  <data name="Formats" xml:space="preserve"><value>Supported formats (comma separated)</value></data>
+  <data name="Images" xml:space="preserve"><value>Images:</value></data>
+  <data name="Videos" xml:space="preserve"><value>Videos:</value></data>
+  <data name="Audio" xml:space="preserve"><value>Audio:</value></data>
+  <data name="Text" xml:space="preserve"><value>Text/Code:</value></data>
+  <data name="Archives" xml:space="preserve"><value>Archives:</value></data>
+  <data name="MaxFileSize" xml:space="preserve"><value>Max file size (MB, 0 = unlimited)</value></data>
+  <data name="MaxArchiveEntries" xml:space="preserve"><value>Max archive entries (0 = unlimited)</value></data>
+  <data name="MaxTextLines" xml:space="preserve"><value>Max text lines (0 = unlimited)</value></data>
+  <data name="CacheSizeCount" xml:space="preserve"><value>Image cache size (count)</value></data>
+  <data name="CacheSizeMb" xml:space="preserve"><value>Image cache size (MB)</value></data>
+
+  <data name="AudioSettings" xml:space="preserve"><value>Audio playback settings</value></data>
+  <data name="Volume" xml:space="preserve"><value>Audio volume:</value></data>
+  <data name="VideoNoSound" xml:space="preserve"><value>Video is always played without sound.</value></data>
+
+  <data name="Startup" xml:space="preserve"><value>Application startup</value></data>
+  <data name="AutoStart" xml:space="preserve"><value>Run at Windows startup</value></data>
+  <data name="FullScreenApps" xml:space="preserve"><value>Full-screen applications</value></data>
+  <data name="PauseOnFullScreen" xml:space="preserve"><value>Slow down polling on full-screen apps</value></data>
+  <data name="Mode" xml:space="preserve"><value>Mode:</value></data>
+  <data name="OnlyExclusive" xml:space="preserve"><value>Exclusive full screen only</value></data>
+  <data name="AllFullScreen" xml:space="preserve"><value>All full-screen applications</value></data>
+
+  <data name="About" xml:space="preserve"><value>Application information</value></data>
+  <data name="Info" xml:space="preserve"><value>Information</value></data>
+
+  <data name="InfoImage" xml:space="preserve"><value>Image:</value></data>
+    <data name="InfoVideo" xml:space="preserve"><value>Video:</value></data>
+    <data name="InfoAudio" xml:space="preserve"><value>Audio:</value></data>
+    <data name="InfoText" xml:space="preserve"><value>Text:</value></data>
+    <data name="InfoArchive" xml:space="preserve"><value>Archive:</value></data>
+    <data name="InfoWeight" xml:space="preserve"><value>Size:</value></data>
+    <data name="InfoDuration" xml:space="preserve"><value>Duration:</value></data>
+    <data name="InfoBitrate" xml:space="preserve"><value>Bitrate:</value></data>
+    <data name="InfoLoading" xml:space="preserve"><value>loading...</value></data>
+    <data name="InfoFiles" xml:space="preserve"><value>Files:</value></data>
+    <data name="InfoTextTruncated" xml:space="preserve"><value>... (file truncated for preview)</value></data>
+    <data name="InfoTextTooLarge" xml:space="preserve"><value>File too large for preview ({0} KB).\nMaximum: {1} MB.</value></data>
+    <data name="InfoArchiveTruncated" xml:space="preserve"><value>... (showing first {0} entries)</value></data>
+    <data name="SizeByte" xml:space="preserve"><value>B</value></data>
+    <data name="SizeKb" xml:space="preserve"><value>KB</value></data>
+    <data name="SizeMb" xml:space="preserve"><value>MB</value></data>
+    <data name="SizeGb" xml:space="preserve"><value>GB</value></data>
+    <data name="SizeTb" xml:space="preserve"><value>TB</value></data>
+    <data name="TraySettings" xml:space="preserve"><value>Settings...</value></data>
+    <data name="TrayExit" xml:space="preserve"><value>Exit</value></data>
+    <data name="TrayTooltip" xml:space="preserve"><value>HoverView - File Preview</value></data>
+
+    <data name="AudioPlaying" xml:space="preserve"><value>Playing</value></data>
+    <data name="AudioPaused" xml:space="preserve"><value>Paused</value></data>
+
+    <data name="ErrorTitle" xml:space="preserve"><value>Error</value></data>
+    <data name="ErrorWidth" xml:space="preserve"><value>Width must be between 100 and 2000.</value></data>
+    <data name="ErrorHeight" xml:space="preserve"><value>Height must be between 100 and 2000.</value></data>
+    <data name="ErrorHoverDelay" xml:space="preserve"><value>Hover delay must be between 0 and 5000 ms.</value></data>
+    <data name="ErrorHideDelay" xml:space="preserve"><value>Hide delay must be between 0 and 5000 ms.</value></data>
+    <data name="ErrorMaxSize" xml:space="preserve"><value>Max size must be 0 or greater.</value></data>
+    <data name="ErrorMaxArchiveEntries" xml:space="preserve"><value>Max archive entries must be 0 or greater.</value></data>
+    <data name="ErrorMaxTextLines" xml:space="preserve"><value>Max text lines must be 0 or greater.</value></data>
+    <data name="ErrorMaxCacheSize" xml:space="preserve"><value>Cache size (count) must be between 1 and 1000.</value></data>
+    <data name="ErrorMaxCacheSizeMb" xml:space="preserve"><value>Cache size (MB) must be between 1 and 10000.</value></data>
+
+    <data name="ErrorAutoStartTitle" xml:space="preserve"><value>Error</value></data>
+    <data name="ErrorAutoStartMessage" xml:space="preserve"><value>Auto-start configuration error: {0}</value></data>
+</root>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <data name="SettingsTitle" xml:space="preserve"><value>Настройки HoverView</value></data>
+  <data name="TabAppearance" xml:space="preserve"><value>Внешний вид</value></data>
+  <data name="TabFormats" xml:space="preserve"><value>Форматы и размер</value></data>
+  <data name="TabSound" xml:space="preserve"><value>Звук</value></data>
+  <data name="TabSystem" xml:space="preserve"><value>Система</value></data>
+  <data name="TabAbout" xml:space="preserve"><value>О программе</value></data>
+  <data name="Close" xml:space="preserve"><value>Закрыть</value></data>
+  <data name="Save" xml:space="preserve"><value>Сохранить</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Отмена</value></data>
+  <data name="Version" xml:space="preserve"><value>Версия: </value></data>
+  <data name="Author" xml:space="preserve"><value>Автор: {0}</value></data>
+  <data name="Language" xml:space="preserve"><value>Язык:</value></data>
+  <data name="Saved" xml:space="preserve"><value>(Сохранено)</value></data>
+
+  <data name="WindowSizeLimit" xml:space="preserve"><value>Лимит размера окна предпросмотра</value></data>
+  <data name="Width" xml:space="preserve"><value>Ширина:</value></data>
+  <data name="Height" xml:space="preserve"><value>Высота:</value></data>
+  <data name="DisplayMode" xml:space="preserve"><value>Режим отображения:</value></data>
+  <data name="AutoSizeToContent" xml:space="preserve"><value>Подстраивать окно точно под размер файла (без рамок)</value></data>
+  <data name="UseMinimalFrame" xml:space="preserve"><value>Вписывать в лимит с сохранением пропорций и минимальной рамкой</value></data>
+  <data name="Delays" xml:space="preserve"><value>Задержки появления/исчезновения</value></data>
+  <data name="HoverDelay" xml:space="preserve"><value>Наведение (мс):</value></data>
+  <data name="HideDelay" xml:space="preserve"><value>Исчезновение (мс):</value></data>
+  <data name="ArchiveTree" xml:space="preserve"><value>Дерево архивов</value></data>
+  <data name="ExpandArchiveTree" xml:space="preserve"><value>Раскрывать все папки в дереве архива</value></data>
+
+  <data name="Formats" xml:space="preserve"><value>Поддерживаемые форматы (через запятую)</value></data>
+  <data name="Images" xml:space="preserve"><value>Изображения:</value></data>
+  <data name="Videos" xml:space="preserve"><value>Видео:</value></data>
+  <data name="Audio" xml:space="preserve"><value>Аудио:</value></data>
+  <data name="Text" xml:space="preserve"><value>Текст/Код:</value></data>
+  <data name="Archives" xml:space="preserve"><value>Архивы:</value></data>
+  <data name="MaxFileSize" xml:space="preserve"><value>Максимальный размер файла (МБ, 0 = без ограничений)</value></data>
+  <data name="MaxArchiveEntries" xml:space="preserve"><value>Максимум записей в архиве (0 = без ограничений)</value></data>
+  <data name="MaxTextLines" xml:space="preserve"><value>Максимум строк текста (0 = без ограничений)</value></data>
+  <data name="CacheSizeCount" xml:space="preserve"><value>Размер кэша изображений (шт.)</value></data>
+  <data name="CacheSizeMb" xml:space="preserve"><value>Размер кэша изображений (МБ)</value></data>
+
+  <data name="AudioSettings" xml:space="preserve"><value>Настройки воспроизведения аудио</value></data>
+  <data name="Volume" xml:space="preserve"><value>Громкость аудиофайлов:</value></data>
+  <data name="VideoNoSound" xml:space="preserve"><value>Видео всегда воспроизводится без звука.</value></data>
+
+  <data name="Startup" xml:space="preserve"><value>Запуск приложения</value></data>
+  <data name="AutoStart" xml:space="preserve"><value>Запускать при старте Windows</value></data>
+  <data name="FullScreenApps" xml:space="preserve"><value>Полноэкранные приложения</value></data>
+  <data name="PauseOnFullScreen" xml:space="preserve"><value>Замедлять опрос при полноэкранных приложениях</value></data>
+  <data name="Mode" xml:space="preserve"><value>Режим:</value></data>
+  <data name="OnlyExclusive" xml:space="preserve"><value>Только эксклюзивный полный экран</value></data>
+  <data name="AllFullScreen" xml:space="preserve"><value>Все полноэкранные приложения</value></data>
+
+  <data name="About" xml:space="preserve"><value>Информация о приложении</value></data>
+  <data name="Info" xml:space="preserve"><value>Информация</value></data>
+
+  <data name="InfoImage" xml:space="preserve"><value>Изображение:</value></data>
+    <data name="InfoVideo" xml:space="preserve"><value>Видео:</value></data>
+    <data name="InfoAudio" xml:space="preserve"><value>Аудио:</value></data>
+    <data name="InfoText" xml:space="preserve"><value>Текст:</value></data>
+    <data name="InfoArchive" xml:space="preserve"><value>Архив:</value></data>
+    <data name="InfoWeight" xml:space="preserve"><value>Вес:</value></data>
+    <data name="InfoDuration" xml:space="preserve"><value>Длительность:</value></data>
+    <data name="InfoBitrate" xml:space="preserve"><value>Битрейт:</value></data>
+    <data name="InfoLoading" xml:space="preserve"><value>загрузка...</value></data>
+    <data name="InfoFiles" xml:space="preserve"><value>Файлов:</value></data>
+    <data name="InfoTextTruncated" xml:space="preserve"><value>... (файл обрезан для предпросмотра)</value></data>
+    <data name="InfoTextTooLarge" xml:space="preserve"><value>Файл слишком большой для предпросмотра ({0} КБ).\nМаксимум: {1} МБ.</value></data>
+    <data name="InfoArchiveTruncated" xml:space="preserve"><value>... (показаны первые {0} записей)</value></data>
+    <data name="SizeByte" xml:space="preserve"><value>Б</value></data>
+    <data name="SizeKb" xml:space="preserve"><value>КБ</value></data>
+    <data name="SizeMb" xml:space="preserve"><value>МБ</value></data>
+    <data name="SizeGb" xml:space="preserve"><value>ГБ</value></data>
+    <data name="SizeTb" xml:space="preserve"><value>ТБ</value></data>
+    <data name="TraySettings" xml:space="preserve"><value>Настройки...</value></data>
+    <data name="TrayExit" xml:space="preserve"><value>Выход</value></data>
+    <data name="TrayTooltip" xml:space="preserve"><value>HoverView - Предпросмотр файлов</value></data>
+
+    <data name="AudioPlaying" xml:space="preserve"><value>Воспроизведение</value></data>
+    <data name="AudioPaused" xml:space="preserve"><value>Пауза</value></data>
+
+    <data name="ErrorTitle" xml:space="preserve"><value>Ошибка</value></data>
+    <data name="ErrorWidth" xml:space="preserve"><value>Ширина должна быть от 100 до 2000.</value></data>
+    <data name="ErrorHeight" xml:space="preserve"><value>Высота должна быть от 100 до 2000.</value></data>
+    <data name="ErrorHoverDelay" xml:space="preserve"><value>Задержка наведения должна быть от 0 до 5000 мс.</value></data>
+    <data name="ErrorHideDelay" xml:space="preserve"><value>Задержка исчезновения должна быть от 0 до 5000 мс.</value></data>
+    <data name="ErrorMaxSize" xml:space="preserve"><value>Максимальный размер должен быть 0 или больше.</value></data>
+    <data name="ErrorMaxArchiveEntries" xml:space="preserve"><value>Максимум записей в архиве должен быть 0 или больше.</value></data>
+    <data name="ErrorMaxTextLines" xml:space="preserve"><value>Максимум строк текста должен быть 0 или больше.</value></data>
+    <data name="ErrorMaxCacheSize" xml:space="preserve"><value>Размер кэша (шт.) должен быть от 1 до 1000.</value></data>
+    <data name="ErrorMaxCacheSizeMb" xml:space="preserve"><value>Размер кэша (МБ) должен быть от 1 до 10000.</value></data>
+
+    <data name="ErrorAutoStartTitle" xml:space="preserve"><value>Ошибка</value></data>
+    <data name="ErrorAutoStartMessage" xml:space="preserve"><value>Ошибка настройки автозапуска: {0}</value></data>
+</root>
