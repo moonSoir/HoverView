@@ -2,13 +2,13 @@
 // Copyright (c) 2026 kyosora, licensed under MIT.
 // Modifications Copyright (c) 2026 zes / moonSoir.
 
-
-//using System;
-//using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Automation;
 
 #nullable enable
@@ -21,6 +21,11 @@ public sealed class ExplorerFileResolver
     private string? _cachedFolderPath;
     private DateTime _cachedAt;
     private static readonly TimeSpan CacheTtl = TimeSpan.FromSeconds(3);
+
+    // Кэш проверки папок на наличие поддерживаемых файлов
+    private static readonly Dictionary<string, (bool HasSupported, DateTime Timestamp)> _folderCache = new();
+    private static readonly object _folderCacheLock = new();
+    private static readonly TimeSpan FolderCacheTtl = TimeSpan.FromSeconds(10);
 
     // --- Win32 API ---
 
@@ -128,6 +133,51 @@ public sealed class ExplorerFileResolver
         catch (Exception ex) { Log($"Exception: {ex.GetType().Name}: {ex.Message}"); return null; }
     }
 
+    /// <summary>
+    /// Проверяет (с кэшем), есть ли в папке файлы с поддерживаемыми расширениями.
+    /// Возвращает true/false, если результат известен, или null, если проверка ещё идёт.
+    /// </summary>
+    public bool? FolderHasSupportedFiles(string folderPath, List<string> supportedExtensions)
+    {
+        if (string.IsNullOrEmpty(folderPath)) return null;
+
+        lock (_folderCacheLock)
+        {
+            if (_folderCache.TryGetValue(folderPath, out var cached) &&
+                DateTime.UtcNow - cached.Timestamp < FolderCacheTtl)
+            {
+                return cached.HasSupported;
+            }
+        }
+
+        // Запускаем проверку в фоне
+        _ = Task.Run(() =>
+        {
+            bool hasSupported = false;
+            try
+            {
+                var exts = new HashSet<string>(supportedExtensions, StringComparer.OrdinalIgnoreCase);
+                foreach (var file in Directory.EnumerateFiles(folderPath))
+                {
+                    var ext = Path.GetExtension(file);
+                    if (exts.Contains(ext))
+                    {
+                        hasSupported = true;
+                        break;
+                    }
+                }
+            }
+            catch { }
+
+            lock (_folderCacheLock)
+            {
+                _folderCache[folderPath] = (hasSupported, DateTime.UtcNow);
+            }
+        });
+
+        return null;
+    }
+
     // --- Вспомогательные методы ---
 
     private static string GetWindowClass(IntPtr hwnd)
@@ -228,7 +278,6 @@ public sealed class ExplorerFileResolver
         Log($"  кэш промах (tab=0x{activeTabHwnd.ToInt64():X}, prev=0x{_cachedTabHandle.ToInt64():X})");
         string? folderPath = null;
 
-        // Основной путь: COM через IShellBrowser с сопоставлением по HWND вкладки
         if (activeTabHwnd != IntPtr.Zero)
         {
             Log($"  пробуем COM через IShellBrowser (targetTab=0x{activeTabHwnd.ToInt64():X})");
@@ -236,7 +285,6 @@ public sealed class ExplorerFileResolver
             Log($"  COM via IShellBrowser -> '{folderPath}'");
         }
 
-        // Fallback: UIA (на случай, если COM не сработал)
         if (folderPath == null && activeTabHwnd != explorerHwnd && activeTabHwnd != IntPtr.Zero)
         {
             Log($"  fallback: UIA от активной вкладки 0x{activeTabHwnd.ToInt64():X}");
@@ -253,13 +301,8 @@ public sealed class ExplorerFileResolver
         return folderPath;
     }
 
-    /// <summary>
-    /// Перебирает окна Shell.Application, для каждого окна запрашивает IShellBrowser
-    /// и получает HWND вкладки через GetWindow(). Сравнивает с targetTabHwnd.
-    /// </summary>
     private static string? GetFolderPathViaComByTabHwnd(IntPtr targetTabHwnd)
     {
-        // Локальные копии GUID — static readonly нельзя передавать по ref.
         var sidTopLevelBrowser = new Guid("4c96be40-915c-11cf-99d3-00aa004ae837");
         var iidShellBrowser = new Guid("000214e2-0000-0000-c000-000000000046");
 
@@ -342,8 +385,8 @@ public sealed class ExplorerFileResolver
 
             if (addressBar == null) { Log("    UIA: адресная строка (AutomationId=1001) не найдена"); return null; }
 
-            Log($"    UIA: addressBar Name='{addressBar.Current.Name}', Class='{addressBar.Current.ClassName}', " +
-                $"Bounds={addressBar.Current.BoundingRectangle}");
+                Log($"    UIA: addressBar Name='{addressBar.Current.Name}', Class='{addressBar.Current.ClassName}', " +
+            $"Bounds={addressBar.Current.BoundingRectangle}");
             var valuePattern = addressBar.GetCurrentPattern(ValuePattern.Pattern) as ValuePattern;
             var path = valuePattern?.Current.Value;
             Log($"    UIA: ValuePattern.Value = '{path}'");
