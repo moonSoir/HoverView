@@ -30,8 +30,11 @@ public static class AutoStartManager
         }
         catch (Exception ex)
         {
-            System.Windows.MessageBox.Show($"Ошибка настройки автозапуска: {ex.Message}", "Ошибка",
-                System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+            System.Windows.MessageBox.Show(
+                string.Format(Localization.Get("ErrorAutoStartMessage"), ex.Message),
+                Localization.Get("ErrorAutoStartTitle"),
+                System.Windows.MessageBoxButton.OK,
+                System.Windows.MessageBoxImage.Warning);
         }
     }
 }
